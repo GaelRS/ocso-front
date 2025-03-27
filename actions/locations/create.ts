@@ -1,8 +1,10 @@
 'use server'
 
 import { API_URL } from "@/constants"
+import { Location } from "@/entities";
 import { authHeaders } from "@/helpers/AuthHeaders";
 import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createLocation(formData: FormData) {
     
@@ -25,16 +27,19 @@ export async function createLocation(formData: FormData) {
 
     location.locationLatLng = locationLatLng;
 
-    try {
-        const response = await fetch(`${API_URL}/locations`, {
-            body: JSON.stringify(location),
-            method: 'POST',
-            headers:{
-                ...authHeaders()         
-            }
-        });
-        if(response.status === 201) revalidateTag("dasboard:locations");
-    } catch (error: any) {
-        console.error("Error creating location:", error);
+    const response = await fetch(`${API_URL}/locations`, {
+        body: JSON.stringify(location),
+        method: 'POST',
+        headers:{
+            'Content-type': 'application/json',
+            ...authHeaders()         
+        }
+    });
+    const {locationId}: Location = await response.json();
+    if(response.status === 201){
+        revalidateTag("dasboard:locations");
+        redirect(`/dashboard?store=${locationId}`);
     }
+    
+    
 }

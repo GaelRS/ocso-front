@@ -4,8 +4,10 @@ import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
 import { API_URL} from "@/constants";
 import FormNewLocation from "./_components/FormNewLocation";
+import FormUpdateLocation from "./_components/FormUpdateLocation";
 import DeleteLocationButton from "./_components/DeleteLocationButton";
 import { authHeaders } from "@/helpers/AuthHeaders";
+import UpdateLocation from "./_components/UpdateLocation";
 
 const LocationsPage = async ({searchParams}:{searchParams: { [key: string]: string | string[] | undefined }}) => {
    
@@ -43,6 +45,9 @@ const LocationsPage = async ({searchParams}:{searchParams: { [key: string]: stri
                <FormNewLocation store={searchParams.store}/>
             </div>
                <DeleteLocationButton store={searchParams.store}/>
+               <UpdateLocation>
+                  <FormUpdateLocation store={searchParams.store}/>
+               </UpdateLocation>
          </div>
       </div>
    )

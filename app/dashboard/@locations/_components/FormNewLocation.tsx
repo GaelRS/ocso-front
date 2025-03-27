@@ -34,10 +34,10 @@ export default async function FormNewLocation({store}:{store: string | string[] 
    return(
       <form action={createLocation} className="bg-orange-400 py-2 px-2 flex flex-col gap-1 w-full rounded-lg">
          <h1 className="text-xl text-white text-center">Crear Tienda</h1>
-         <Input label="Nombre" placeholder="Ocoso juriquilla" name="locationName"/>
-         <Input label="Dirección" placeholder="Av. de la Luz S/N" name="locationAddress"/>
-         <Input label="Latitud" placeholder="-120" name="locationLat"/>
-         <Input label="Longitud" placeholder="20" name="locationLng"/>
+         <Input required={true} label="Nombre" placeholder="Ocoso juriquilla" name="locationName"/>
+         <Input required={true} label="Dirección" placeholder="Av. de la Luz S/N" name="locationAddress"/>
+         <Input required={true} label="Latitud" placeholder="-120" name="locationLat"/>
+         <Input required={true} label="Longitud" placeholder="20" name="locationLng"/>
          <SelectManager managers={dataManagers} locations = {dataLocations} />
          <Button type="submit" color="primary"> Subir </Button>
          

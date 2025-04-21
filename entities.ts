@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 export interface Location {
    locationId: number;
    locationName: string;
@@ -20,6 +22,7 @@ export interface Location {
  }
  
  export interface Manager {
+   map(arg0: (manager: Manager) => JSX.Element): import("react").ReactNode;
    managerId: string;
    managerFullName: string;
    managerSalary: number;

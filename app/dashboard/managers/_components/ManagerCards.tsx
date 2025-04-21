@@ -5,7 +5,7 @@ import { Card, CardBody, CardHeader, Divider } from "@heroui/react";
 import Link from "next/link";
 
 
-export default async function ManagerCard() {
+export default async function ManagerCards() {
    const response = await fetch(`${API_URL}/managers`,{
       method:"GET",
       headers: {

@@ -12,6 +12,7 @@ export default function ManagerCard({manager}: {manager: Manager}) {
          <CardBody >
             <p className="w-full text-center">Email: <b>{manager.managerEmail}</b></p>
             <p className="w-full text-center">Teléfono: <b>{manager.managerPhoneNumber}</b></p>
+            <p className="w-full text-center">Salario: <b>{manager.managerSalary}</b></p>
             {manager.location ? (
                <>
                   <p className="w-full text-center">Tienda: <Link href={{pathname:`/dashboard`,

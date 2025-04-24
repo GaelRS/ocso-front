@@ -10,7 +10,7 @@ import { LuPlus } from "react-icons/lu";
    return (
      <>
        <Button onPress={onOpen} className="w-fit" color="primary"><LuPlus size="20"/></Button>
-       <Modal className="bg-orange-400" isOpen={isOpen} onOpenChange={onOpenChange}>
+       <Modal className="bg-orange-400 " isOpen={isOpen} onOpenChange={onOpenChange}>
          <ModalContent>
            {() => (
              <>

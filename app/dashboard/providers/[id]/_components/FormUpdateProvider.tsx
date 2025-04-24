@@ -1,6 +1,8 @@
 import { Provider } from "@/entities";
 import { Button, Input } from "@heroui/react";
 import UpdateProvider from "@/actions/providers/update";
+import DeleteProvider from "./DeleteProvider";
+import DeleteProviderButton from "./DeleteButton";
 
 export default async function FormUpdateProvider({provider}:{provider: Provider}){
    const {providerId} = provider
@@ -12,6 +14,10 @@ export default async function FormUpdateProvider({provider}:{provider: Provider}
             <Input className="max-w-[250px]" required={true} isRequired defaultValue={provider.providerEmail} label="Correo electrónico" placeholder="proveedor@ejemplo.com" name="providerEmail"/>
             <Input className="max-w-[250px]" label="Número de teléfono" defaultValue={provider.providerPhoneNumber} placeholder="4423579165" name="providerPhoneNumber"/>
             <Button color="primary" type="submit"> Actualiza Proveedor </Button>
+            <DeleteProvider>
+               <h1 className="text-white text-3xl text-center">¿Estás seguro de eliminar al provedor <b>{provider.providerName}</b>?</h1>
+               <DeleteProviderButton providerId={providerId}/>
+            </DeleteProvider>
          </form>
       </>   
    )

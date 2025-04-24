@@ -17,7 +17,7 @@ export default async function ProvidersPage({params}: {params: {id: string}}) {
    })).json()
    return (
       <div className="flex flex-grow-0 flex-col gap-10 h-[90vh] pt-10 px-10">
-         <div className="flex flex-row items-center gap-6"> 
+         <div className="flex flex-row items-center gap-6 "> 
             <ProviderCard provider={provider} />
             <FormUpdateProvider provider={provider}/>
          </div>

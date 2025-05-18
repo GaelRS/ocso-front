@@ -17,9 +17,9 @@ const EmployeesPage = async () => {
     <div className="flex flex-wrap flex-grow-0 h-[90vh] gap-4 overflow-y-auto p-10">
       {employees.map((employee: Employee) => {
         if(employee.employeePhoto !== null){
-          return <EmployeePhotoCard key={employee.employeeId} employee={employee} />;
+          return <EmployeePhotoCard key={employee.id} employee={employee} />;
         }else{
-          return <EmployeeCard key={employee.employeeId} employee={employee} />;
+          return <EmployeeCard key={employee.id} employee={employee} />;
         }
       })}
     </div>

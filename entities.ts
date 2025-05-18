@@ -11,7 +11,7 @@ export interface Location {
  }
  
  export interface Employee {
-   employeeId: string;
+   id: string;
    employeeName: string;
    employeeLastName: string;
    employeePhoneNumber: string;

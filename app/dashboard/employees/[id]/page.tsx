@@ -1,8 +1,6 @@
 import { API_URL } from "@/constants";
-import EmployeeCard from "../_components/EmployeeCard";
 import { authHeaders } from "@/helpers/AuthHeaders";
 import { Employee } from "@/entities";
-import { Image } from "@heroui/react";
 import FormUpdateEmployee from "./_components/FormUpdateEmployee";
 import EmployeeDataCard from "./_components/EmployeeDataCard";
 
